@@ -3,8 +3,9 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<link rel="stylesheet" href="style/style.css">
 	<style>
+	
 		@font-face {
 			font-family: 'icomoon';
 			src: url('fonts/icomoon.eot?tay3j5');
@@ -16,372 +17,8 @@
 			font-style: normal;
 			font-display: block;
 		}
-
-		[class^="icon-"],
-		[class*=" icon-"] {
-			/* use !important to prevent issues with browser extensions that change fonts */
-			font-family: 'icomoon' !important;
-			speak: never;
-			font-style: normal;
-			font-weight: normal;
-			font-variant: normal;
-			text-transform: none;
-			line-height: 1;
-
-			/* Better Font Rendering =========== */
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-		}
-
-		.icon-arrow-down:before {
-			content: "\e900";
-			color: #f2f2f2;
-		}
-
-		.icon-arrow-right:before {
-			content: "\e901";
-		}
-
-		.icon-headset:before {
-			content: "\e902";
-		}
-
-		.icon-Menu_book:before {
-			content: "\e903";
-		}
-
-		.icon-movie:before {
-			content: "\e904";
-		}
-
-		.icon-open:before {
-			content: "\e905";
-			color: #f2f2f2;
-		}
-
-		.icon-Search:before {
-			content: "\e906";
-			color: #f2f2f2;
-		}
-
-		.icon-Vector:before {
-			content: "\e907";
-			color: #f2f2f2;
-		}
-
-		/* Start Style */
-
-		h2 {
-			vertical-align: center;
-			text-align: center;
-		}
-
-		p {
-			font-weight: 700;
-			font-size: 12px;
-			line-height: 14px;
-			text-align: center;
-			text-transform: uppercase;
-			color: #F2F2F2;
-		}
-
-		html,
-		body {
-			margin: 0;
-			height: 100%;
-		}
-
-		* {
-			font-family: "Roboto";
-			box-sizing: border-box;
-		}
-
-		.top-nav {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-between;
-			background: #333333;
-			color: #FFF;
-			height: 56px;
-			padding: 1em;
-		}
-
-		.menu {
-			display: flex;
-			flex-direction: row;
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			height: inherit;
-		}
-
-		.menu>li {
-			margin: 0 1rem;
-			overflow: hidden;
-		}
-
-		.menu-button-container {
-			display: none;
-			height: 100%;
-			width: 30px;
-			cursor: pointer;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-		}
-
-		#menu-toggle {
-			display: none;
-		}
-
-		.menu-button,
-		.menu-button::before,
-		.menu-button::after {
-			display: block;
-			background-color: #fff;
-			position: absolute;
-			height: 4px;
-			width: 30px;
-			transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-			border-radius: 2px;
-		}
-
-		.menu-button::before {
-			content: '';
-			margin-top: -8px;
-		}
-
-		.menu-button::after {
-			content: '';
-			margin-top: 8px;
-		}
-
-		.icons {
-			display: flex;
-			align-items: center;
-			font-size: 25px;
-			font-weight: 900
-		}
-
-		.login {
-			margin: 0;
-			font-size: 25px;
-		}
-
-		.login::after {
-			content: "\e905";
-			font-family: "icomoon";
-		}
-
-		.vector {
-			margin: 0 15px 0 20px;
-			font-size: 25px;
-		}
-
-		.vector::after {
-			content: "\e907";
-			font-family: "icomoon";
-		}
-
-		.search {
-			margin: 8px 0 0 0;
-			line-height: 0;
-		}
-
-		.search::after {
-			content: "\e906";
-			font-family: "icomoon";
-			font-size: 33px;
-		}
-
-		#menu-toggle:checked+.menu-button-container .menu-button::before {
-			margin-top: 0px;
-			transform: rotate(405deg);
-		}
-
-		#menu-toggle:checked+.menu-button-container .menu-button {
-			background: rgba(255, 255, 255, 0);
-		}
-
-		#menu-toggle:checked+.menu-button-container .menu-button::after {
-			margin-top: 0px;
-			transform: rotate(-405deg);
-		}
-
-		@media (min-width: 820px) {
-			.full-screen {
-				max-width: 1440px;
-				margin: 0 auto;
-				background: #333333;
-			}
-
-			.top-nav {
-				max-width: 1072px;
-				margin: 0 auto;
-			}
-
-			.login {
-				font-size: 12px;
-			}
-
-			.vector {
-				font-size: 12px;
-			}
-
-			.search {
-				margin: 5px 0 0 0;
-			}
-
-			.search::after {
-				font-size: 20px;
-			}
-
-			.menu>li {
-				margin: 0 10px;
-			}
-
-			.menu>li:after {
-				content: "\e900";
-				font-family: "icomoon";
-				padding-left: 5px;
-				font-size: 8px;
-			}
-
-			.menu>li:hover {
-				background: #000000;
-				border-radius: 5px;
-			}
-		}
-
-		@media (max-width: 820px) {
-			.menu-button-container {
-				display: flex;
-			}
-
-			.menu {
-				position: absolute;
-				top: 0;
-				margin-top: 50px;
-				left: 0;
-				flex-direction: column;
-				width: 100%;
-				justify-content: center;
-				align-items: center;
-			}
-
-			#menu-toggle~.menu li {
-				height: 0;
-				margin: 0;
-				padding: 0;
-				border: 0;
-				transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-			}
-
-			#menu-toggle:checked~.menu li {
-				border: 1px solid #333;
-				height: 2.5em;
-				padding: 0.5em;
-				transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-			}
-
-			.menu>li {
-				display: flex;
-				justify-content: center;
-				margin: 0;
-				padding: 0.5em 0;
-				width: 100%;
-				color: white;
-				background-color: #222;
-			}
-
-			.menu>li:not(:last-child) {
-				border-bottom: 1px solid #444;
-			}
-		}
-
-		@media (min-width: 1024px) {
-				.dropdown {
-			display: flex;
-			align-items: center;
-			margin-right: 15px;
-			transition: all 0.3s ease-in-out;
-		}
-
-		.dropdown:hover .submenu {
-			height: 440px;
-		}
-
-		.dropdown:hover .submenu>a {
-			color: #3862a0;
-		}
-
-		.dropdown:hover submenu>a::before {
-			visibility: visible;
-			transform: scale(1, 1);
-		}
-
-		.dropdown .submenu {
-		        display: flex;
-			overflow: hidden;
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 56px;
-			max-width: 1072px;
-			margin: 0 auto;
-			background-color: #3862a0;
-			height: 0;
-			line-height: 40px;
-			box-sizing: border-box;
-			transition: height 0.3s ease-in-out;
-			transition-delay: 0.1s;
-		}
-
-		.dropdown .submenu>a {
-			color: #fff;
-			margin-top: 20px;
-			font-size: 16px;
-		}
-
-		.dropdown .submenu>a:hover {
-			color: #fff;
-			text-decoration: underline;
-		}
-
-		.dropdown>a {
-			color: #fff;
-			display: block;
-			text-decoration: none;
-			position: relative;
-		}
-
-		.dropdown>a::before {
-			content: "";
-			position: absolute;
-			width: 100%;
-			height: 3px;
-			bottom: -10px;
-			left: 0px;
-			background-color: #3862a0;
-			transition: all 0.2s ease-in-out;
-			transform: scale(0, 0);
-			visibility: hidden;
-		}
-			.menu>li {
-				padding: 17px 12px;
-			}
-
-			.menu>li:after {
-				padding-left: 12px;
-			}
-			
-			li {
-			        list-style:none;
-			}
-			
-		}
 	</style>
+
 </head>
 
 <body>
@@ -397,16 +34,53 @@
 				<li class="dropdown">
 					<a href="#">Mega menu</a>
 					<ul class="submenu">
-					    <div class="left-conatiner">
-						<li><a href="#">Movies</a></li>
-						<li><a href="#">Music</a></li>
-						<li><a href="#">Books</a></li>
+					    <div class="left-container">
+						<li class="movies"><a href="#">Movies</a></li>
+						<li class="music"><a href="#">Music</a></li>
+						<li class="books"><a href="#">Books</a></li>
+						<img src="images/shopaholics.png" />
 					    </div>
 					    <div class="right-container">
-					         <img src="" />
+					         <img src="images/main-poster.png" class="left-image" />
+					         
+					         <div class="background-image"> 
 					         <div class="lists">
+					         <div>
+					         <h2>Best sellers</h2>
+					         <ul>
+					         <li>The Hunger Games</li>
+					         <li>American Hustle</li>
+					         <li>Frozen</li>
+					         <li>Gravity</li>
+					         </ul>
 					         </div>
-					         <img src="" />
+					         
+					         <div>
+					         <h2>Drama</h2>
+					         <ul>
+					         <li>The Departed</li>
+					         <li>The Wolf of Wall Street</li>
+					         <li>The Shawshank Redemption</li>
+					         <li>Saving Private Ryan</li>
+					         </ul>
+					         </div>
+					         
+					         <div>
+					         <h2>SciFi/Fantasy</h2>
+					         <ul>
+					         <li>Inception</li>
+					         <li>The Hobbit</li>
+					         <li>The Empire Strikes Back</li>
+					         <li>The Dark Knight</li>
+					         <li>Terminator 2: Judgement Day</li>
+					         <li>Jurassic Park</li>
+					         <li>X-Men: First Class</li>
+					         </ul>
+					         </div>
+					         </div>
+					         <img src="images/movie-poster.png" class="right-image" />
+					         <button class="watch-movie"><b><i>Snowpiercer</i></b>&nbsp;in theathers ths week</button>
+					         </div>
 					    </div>
 					</ul>
 				</li>
